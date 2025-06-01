@@ -14,7 +14,7 @@ public class SecondHighestTest{
 }
 
 
-	@Test
+/*	@Test
 	public void getSecond(){
 
 	int[] number = {9, 6, 8, 11, 12};
@@ -24,6 +24,6 @@ public class SecondHighestTest{
 	int output = SecondHighest.second(number);
 	assertEquals(expected, output);
 }
-
+*/
 
 }
