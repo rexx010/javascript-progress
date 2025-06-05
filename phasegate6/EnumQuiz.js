@@ -44,12 +44,12 @@ ans: "a"};
 const question = [option1, option2, option3, option4, option5, option6, option7, option8, option9, option10];
 
 //console.log(question);
-const Question = function(choice, type, question){
+const Question = function(choice, question){
 
-for(let count = 0; count < question.length; count++){
-if(choice === count){
-console.log(type);
-console.log(type.opt);
+for (let index in question){
+if(choice == index){
+console.log(question[index]);
+console.log(question.opt);
 }
 
 }
@@ -73,7 +73,6 @@ case '1':
 	let choice = Number(prompt("press a number between 1 - 10 to choose a question: "));
 	let type = prompt("type an option: ");
 	//console.log(question);
-
 	console.log(Question(choice, type));
 case '0':
 	hey = false;
