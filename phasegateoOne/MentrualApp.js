@@ -3,44 +3,62 @@ const prompt = input();
 
 
 
-const begin = function(let year, let month, let day){
+const begin = function(year, month, day){
 const start = new Date(year, month, day);
 return start;
 }
 
-const flowDate = function(let year, let month, let day){
+const flowDate = function(year, month, day){
 const start = new Date(year, month, day);
-const stop = start.plusDays(5);
+const stop = new Date(start);
+stop.setDate(stop.getDate()+5)
+
 return "your flow starts on the "+start+"\n it ends on the "+stop;
 }
 
-const finish = function(let year, let month, let day, let cycle){
-const check = new Date(year, month, day);
-const end = check.plusDays(cycle);
+const finish = function(year, month, day, cycle){
+const start = new Date(year, month, day);
+const end = new Date(start);
+end.setDate(end.getDate() + cycle);
 return end;
 }
 
-const ovulation = function(let year, let month, let day, let cycle){
+const ovulation = function(year, month, day, cycle){
 const starting = new Date(year, month, day);
-const ending = starting.plusDays(cycle);
-const ovuStart = ending.minusDays(16);
-const ovuEnd = ending.minusDays(12);
+const ending = new Date(starting);
+ending.setDate(ending.getDate() + cycle);
+
+const ovuStart = new Date(ending);
+ovuStart.setDate(ovuStart.getDate() + 16);
+
+const ovuEnd = new Date(ending);
+ovuEnd.setDate(ovuEnd.getDate() + 12);
 return "your ovulation starts on the "+ovuStart+"\n it ends on the "+ovuEnd;
 }
 
-const fertileLength = function(let year, let month, let day, let cycle){
-const started = new Date(year, month, day);
-const ended = started.plusDays(cycle);
-const ferileStart = ended.minusDays(21);
-const ferileEnd = ended.minusDays(12);
+const fertileLength = function(year, month, day, cycle){
+const starting = new Date(year, month, day);
+const ending = new Date(starting);
+ending.setDate(ending.getDate() + cycle);
+
+const ferileStart = new Date(ending);
+ferileStart.setDate(ferileStart.getDate() - 21);
+
+const ferileEnd = new Date(ending);
+ferileEnd.setDate(ferileEnd.getDate() - 12);
 return "your fertility starts on the "+ferileStart+"\n it ends on the "+ferileEnd;
 }
 
-const safeperiod = function(let year, let month, let day, let cycle){
-const started = new Date(year, month, day);
-const ended = started.plusDays(cycle);
-const ferileStart = ended.minusDays(21);
-const ferileEnd = ended.minusDays(12);
+const safeperiod = function(year, month, day, cycle){
+const starting = new Date(year, month, day);
+const ending = new Date(starting);
+ending.setDate(ending.getDate() + cycle);
+
+const ferileStart = new Date(ending);
+ferileStart.setDate(ferileStart.getDate() - 21);
+
+const ferileEnd = new Date(ending);
+ferileEnd.setDate(ferileEnd.getDate() - 12);
 return "All days are safe to have fun excluding days within "+ferileStart+" and "+ferileEnd;
 }
 
