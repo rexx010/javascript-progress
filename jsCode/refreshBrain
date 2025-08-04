@@ -1,0 +1,53 @@
+    let word = "Ade is going to Semicolon"
+    let present = ""
+    let biggest = ""
+
+    for(let count = 0; count < word.length; count++){
+        let current = word[count];
+        if(current != " "){
+            present += current;
+        }else{
+            present = "";
+        }
+
+        if(present.length > biggest.length){
+            biggest = present;
+        }
+      
+    }
+    console.log(biggest)
+    
+
+let number = 36
+let number1 = 0
+    for(let count = 1; count < 10; count++){
+        for(let counter = 1; counter < 10; counter++){
+            if(count * counter == number && count != counter){
+                console.log(count, counter);
+                number1 = number1 + 1
+                break;
+            }
+        }
+        if(number1 == 1){break;}
+    }
+
+// let armstrong = 153
+// let numb = 0;
+// split = 0
+// armStri = armstrong.toString()
+//     for(let count = 1; count < armStri.length; count++){
+//         numb += count
+//     }
+//     divider = 100
+// while(armstrong != 0){
+//     split = armstrong % divider
+//     out = 0
+//     neww = ""
+//     for(let count = 1; count <= numb; count++){
+//         out += split * count
+//     }
+//      neww +=split
+//      divider = divider % 10
+//      Math.floor(armstrong)
+//      console.log(neww)
+// }
