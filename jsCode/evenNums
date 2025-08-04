@@ -1,0 +1,35 @@
+// function higherfunction() {
+//     console.log("higher function called");
+// }
+// function lowerfunction(callback) {
+//     console.log("lower function called");
+//     callback()
+// }
+// lowerfunction(higherfunction);
+
+
+// function add(a, b) {
+//     return a + b;
+// }
+// function multiply(a, b) {
+//     return a * b;
+// }
+// function operation(callBack,a, b) {
+//     return callBack(a, b);
+// }
+
+// console.log(operation(add,2,3))
+// console.log(operation(multiply,3,4))
+
+
+const getEvenNumbers = function(array) {
+    let result = [];
+    for (let i = 0; array.length; i++) {
+        if(array[i] % 2 === 0) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
+module.exports = getEvenNumbers
